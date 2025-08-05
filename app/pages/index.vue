@@ -1,5 +1,3 @@
 <template>
-  <h1 class="font-bold text-2xl text-primary">
-    Nuxt UI
-  </h1>
+  <h1 class="text-primary text-2xl font-bold">Nuxt UI</h1>
 </template>
