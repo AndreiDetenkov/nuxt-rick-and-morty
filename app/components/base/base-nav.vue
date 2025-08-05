@@ -26,7 +26,7 @@ const navList: NavItem[] = [
 			raw
 			class="text-lg font-semibold transition-colors duration-300 hover:text-orange-500"
 			inactive-class="text-primary"
-			active-class="text-orange-500 underline underline-offset-4"
+			active-class="text-orange-500"
 		>
 			{{ nav.name }}
 		</ULink>
