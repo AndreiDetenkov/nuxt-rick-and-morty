@@ -1,17 +1,21 @@
-<script setup lang="ts"></script>
-
 <template>
 	<header class="grid min-h-14 grid-cols-[auto_1fr_auto] items-center gap-4">
-		<div>
+		<section>
 			<ULink to="/">
-				<UIcon name="custom-icon:logo" class="fill-primary size-10" mode="svg" />
+				<UIcon
+					name="custom-icon:logo"
+					class="fill-primary dark:fill-primary-light size-10"
+					mode="svg"
+				/>
 			</ULink>
-		</div>
+		</section>
 
-		<div class="flex items-center justify-end">
+		<section class="flex items-center justify-end">
 			<base-nav />
-		</div>
+		</section>
 
-		<div>settings</div>
+		<section>
+			<base-color-mode-btn />
+		</section>
 	</header>
 </template>

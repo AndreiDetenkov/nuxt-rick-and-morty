@@ -24,7 +24,7 @@ const navList: NavItem[] = [
 			data-test-id="nav_link"
 			:to="nav.path"
 			raw
-			class="text-lg font-semibold transition-colors duration-300 hover:text-orange-500"
+			class="dark:text-primary-light text-lg font-semibold transition-colors duration-300 hover:text-orange-500"
 			inactive-class="text-primary"
 			active-class="text-orange-500"
 		>
