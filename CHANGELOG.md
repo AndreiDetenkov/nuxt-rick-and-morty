@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.2
+
+[compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v0.0.1...v0.0.2)
+
+### 🚀 Enhancements
+
+- **characters:** Add CharactersRepository and random character fetching ([b18e596](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/b18e596))
+- **layout:** Enhance theming and add LiveIndicator component ([aff191e](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/aff191e))
+
+### ❤️ Contributors
+
+- Andrei.detenkov <a.detenkov@gmail.com>
+
 ## v0.0.1
 
 
