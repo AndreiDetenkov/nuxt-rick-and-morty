@@ -11,7 +11,8 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "prepare": "husky",
-    "typecheck": "nuxt prepare && vue-tsc -b --noEmit"
+    "typecheck": "nuxt prepare && vue-tsc -b --noEmit",
+    "release": "npx changelogen@latest --release --push"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.58",
@@ -36,5 +37,6 @@
       "prettier --write",
       "eslint --fix"
     ]
-  }
+  },
+  "version": "0.0.1"
 }
