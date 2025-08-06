@@ -4,9 +4,14 @@
 @theme static {
   --font-sans: 'Poppins', sans-serif;
 
-  --color-primary: #3c3e44;
+  --color-primary: #262c33;
   --color-primary-light: #808080;
   --color-primary-lighter: #f5f5f5;
   --color-primary-dark: #333;
   --color-primary-darker: #272b33;
+  --color-bg-card: #3c3e44;
+}
+
+:root {
+  background: var(--color-primary);
 }
