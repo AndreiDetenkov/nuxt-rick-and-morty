@@ -15,3 +15,7 @@
 :root {
   background: var(--color-primary);
 }
+
+.dark {
+  background: var(--background-color-default);
+}
