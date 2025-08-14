@@ -29,5 +29,4 @@ const { data: characters } = await useAsyncData('randomCharacters', () =>
 			</div>
 		</UContainer>
 	</section>
-	<div class="dark:border-primary dark:border" />
 </template>

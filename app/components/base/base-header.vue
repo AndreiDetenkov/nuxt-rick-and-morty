@@ -1,6 +1,6 @@
 <template>
-	<UContainer>
-		<header class="grid min-h-14 grid-cols-[auto_1fr_auto] items-center gap-4">
+	<header class="h-16">
+		<UContainer class="grid h-full grid-cols-[auto_1fr_auto] items-center gap-4">
 			<section>
 				<base-logo />
 			</section>
@@ -12,6 +12,6 @@
 			<section>
 				<base-color-mode-btn />
 			</section>
-		</header>
-	</UContainer>
+		</UContainer>
+	</header>
 </template>
