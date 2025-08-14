@@ -7,9 +7,9 @@ const { character } = defineProps<{ character: Character }>();
 <template>
 	<UCard
 		data-test-id="character_card"
-		variant="solid"
+		variant="outline"
 		:ui="{ header: 'p-0 sm:px-0', body: 'sm:p-4' }"
-		class="bg-bg-card cursor-pointer"
+		class="cursor-pointer bg-transparent"
 		@click="navigateTo({ name: 'character-id', params: { id: character.id } })"
 	>
 		<template #header>
