@@ -7,6 +7,10 @@ export default defineNuxtPlugin({
 
 		const appFetch = $fetch.create({
 			baseURL: config.public.baseUrl,
+
+			onResponseError({ response }) {
+				console.error('API Error:', response.status, response.statusText);
+			},
 		});
 
 		const api = {
