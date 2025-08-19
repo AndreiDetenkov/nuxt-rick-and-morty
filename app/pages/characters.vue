@@ -26,21 +26,13 @@ const searchValue = ref('');
 const { $api } = useNuxtApp();
 const { data, execute, status } = await useAsyncData(
 	'characters',
-	() => $api.characters.filterCharacters(page.value, searchValue.value),
+	() => $api.characters.filterCharacters(page.value, searchValue.value.trim()),
 	{
 		watch: [page],
 	},
 );
-const characters = computed(() => {
-	if (data.value) {
-		return {
-			list: data.value.results ?? [],
-			info: data.value.info ?? {},
-		};
-	}
 
-	return {};
-});
+const notEmptyResults = computed(() => data.value?.results.length);
 </script>
 
 <template>
@@ -57,20 +49,22 @@ const characters = computed(() => {
 				@keyup.enter="execute"
 			/>
 
-			<div class="mb-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-				<character-card
-					v-for="character in characters.list"
-					:key="character.id.toString()"
-					:character="character"
-				/>
-			</div>
+			<template v-if="notEmptyResults">
+				<div class="mb-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+					<character-card
+						v-for="character in data?.results"
+						:key="character.id.toString()"
+						:character="character"
+					/>
+				</div>
 
-			<u-pagination
-				v-model:page="page"
-				:items-per-page="20"
-				:total="characters.info?.count"
-				active-color="secondary"
-			/>
+				<u-pagination
+					v-model:page="page"
+					:items-per-page="20"
+					:total="data?.info.count"
+					active-color="secondary"
+				/>
+			</template>
 		</u-container>
 	</section>
 </template>
