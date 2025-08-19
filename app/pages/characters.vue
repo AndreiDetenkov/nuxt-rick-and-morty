@@ -58,12 +58,14 @@ const notEmptyResults = computed(() => data.value?.results.length);
 					/>
 				</div>
 
-				<u-pagination
-					v-model:page="page"
-					:items-per-page="20"
-					:total="data?.info.count"
-					active-color="secondary"
-				/>
+				<client-only>
+					<u-pagination
+						v-model:page="page"
+						:items-per-page="20"
+						:total="data?.info.count"
+						active-color="secondary"
+					/>
+				</client-only>
 			</template>
 		</u-container>
 	</section>
