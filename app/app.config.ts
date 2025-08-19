@@ -1,4 +1,8 @@
 export default defineAppConfig({
 	// https://ui.nuxt.com/getting-started/theme#design-system
-	ui: {},
+	ui: {
+		colors: {
+			secondary: 'amber',
+		},
+	},
 });

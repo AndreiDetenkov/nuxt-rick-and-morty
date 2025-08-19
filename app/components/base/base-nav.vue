@@ -24,9 +24,9 @@ const navList: NavItem[] = [
 			data-test-id="nav_link"
 			:to="nav.path"
 			raw
-			class="dark:text-primary-light font-semibold transition-colors duration-300 hover:text-orange-500"
+			class="dark:text-primary-light hover:text-secondary font-semibold transition-colors duration-300"
 			inactive-class="text-primary"
-			active-class="text-orange-500"
+			active-class="text-secondary"
 		>
 			{{ nav.name }}
 		</ULink>

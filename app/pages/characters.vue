@@ -20,21 +20,38 @@ useSeoMeta({
 	ogType: 'website',
 });
 
-const { $api } = useNuxtApp();
 const page = ref(1);
+const searchValue = ref('');
 
-const { data: characters, status } = await useAsyncData(
-	computed(() => `characters.page-${page.value}`),
-	() => $api.characters.filterCharacters(page.value, ''),
-	{ watch: [page], server: false },
+const { $api } = useNuxtApp();
+const {
+	data: characters,
+	status,
+	execute,
+} = await useAsyncData(
+	'characters',
+	() => $api.characters.filterCharacters(page.value, searchValue.value),
+	{
+		watch: [page],
+		default: () => ({ results: [], info: { count: 0 } }),
+	},
 );
-
-const success = computed(() => status.value === 'success');
 </script>
 
 <template>
-	<section v-if="success" class="py-10 lg:py-20">
-		<u-container>
+	<section class="py-10 lg:py-20">
+		<u-container class="flex flex-col items-center md:items-start">
+			<u-input
+				v-model="searchValue"
+				:loading="status === 'pending'"
+				size="xl"
+				color="secondary"
+				placeholder="Search characters"
+				icon="i-lucide-search"
+				class="mb-10 w-80"
+				@keyup.enter="execute"
+			/>
+
 			<div class="mb-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 				<character-card
 					v-for="character in characters?.results"
@@ -43,7 +60,12 @@ const success = computed(() => status.value === 'success');
 				/>
 			</div>
 
-			<u-pagination v-model:page="page" :items-per-page="20" :total="characters?.info.count" />
+			<u-pagination
+				v-model:page="page"
+				:items-per-page="20"
+				:total="characters?.info.count"
+				active-color="secondary"
+			/>
 		</u-container>
 	</section>
 </template>

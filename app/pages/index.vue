@@ -30,7 +30,7 @@ const { data: characters } = await useAsyncData('randomCharacters', () =>
 <template>
 	<hero-section />
 	<section class="py-10 lg:py-20">
-		<UContainer>
+		<UContainer class="flex flex-col items-center">
 			<div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
 				<character-card
 					v-for="character in characters"
