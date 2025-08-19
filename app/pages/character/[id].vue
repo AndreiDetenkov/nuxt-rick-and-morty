@@ -6,8 +6,8 @@ const { data } = await useAsyncData(`character:${id}`, () => $api.characters.get
 
 <template>
 	<section class="py-10 lg:py-20">
-		<u-container>
+		<UContainer>
 			<pre>{{ data }}</pre>
-		</u-container>
+		</UContainer>
 	</section>
 </template>

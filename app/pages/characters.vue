@@ -37,8 +37,8 @@ const notEmptyResults = computed(() => data.value?.results.length);
 
 <template>
 	<section class="py-10 lg:py-20">
-		<u-container class="flex flex-col items-center md:items-start">
-			<u-input
+		<UContainer class="flex flex-col items-center md:items-start">
+			<UInput
 				v-model="searchValue"
 				:loading="status === 'pending'"
 				size="xl"
@@ -58,15 +58,15 @@ const notEmptyResults = computed(() => data.value?.results.length);
 					/>
 				</div>
 
-				<client-only>
-					<u-pagination
+				<ClientOnly>
+					<UPagination
 						v-model:page="page"
 						:items-per-page="20"
 						:total="data?.info.count"
 						active-color="secondary"
 					/>
-				</client-only>
+				</ClientOnly>
 			</template>
-		</u-container>
+		</UContainer>
 	</section>
 </template>
