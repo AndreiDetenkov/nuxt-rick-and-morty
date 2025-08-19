@@ -1,6 +1,35 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v0.0.2...v0.0.3)
+
+### 🚀 Enhancements
+
+- **characters:** Refactor character card layout and add new components ([9c89572](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/9c89572))
+- **layout:** Improve BaseHeader structure and update dependencies ([3d7c14b](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/3d7c14b))
+- **characters:** Enhance character pages and improve styling ([af88dbc](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/af88dbc))
+- **seo:** Update metadata and enhance pagination functionality ([eac2d66](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/eac2d66))
+- **characters:** Add search functionality and improve theming ([37aa380](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/37aa380))
+- **characters:** Enhance API error handling and refactor characters logic ([83cd13e](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/83cd13e))
+- **characters:** Trim search input and improve conditional rendering ([d28078d](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/d28078d))
+- **characters:** Add dynamic character detail page ([a36e0d5](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/a36e0d5))
+- **characters:** Wrap pagination in client-only condition ([97fdfc9](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/97fdfc9))
+- **testing:** Add Vitest setup with configuration and BaseHeader tests ([1082af7](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/1082af7))
+
+### 💅 Refactors
+
+- **components:** Standardize component casing in templates ([3cd2c4a](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/3cd2c4a))
+
+### 🏡 Chore
+
+- **docs:** Update README ([3e8247c](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/3e8247c))
+
+### ❤️ Contributors
+
+- Andrei.detenkov <a.detenkov@gmail.com>
+
 ## v0.0.2
 
 [compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v0.0.1...v0.0.2)
