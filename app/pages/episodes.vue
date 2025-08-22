@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import ColumnLayout from '~/components/layout/column-layout.vue';
+
 useSeoMeta({
 	title: 'Rick and Morty Episodes',
 	ogTitle: 'Rick and Morty Episodes',
@@ -23,9 +25,7 @@ const { data } = await useAsyncData('episodes', () => $api.episodes.getAll());
 </script>
 
 <template>
-	<section class="py-10 lg:py-20">
-		<UContainer>
-			<pre>{{ data }}</pre>
-		</UContainer>
-	</section>
+	<column-layout>
+		<pre>{{ data }}</pre>
+	</column-layout>
 </template>

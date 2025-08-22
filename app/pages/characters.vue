@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import CharacterCard from '~/components/character/character-card.vue';
+import ColumnLayout from '~/components/layout/column-layout.vue';
 
 useSeoMeta({
 	title: 'Rick and Morty Characters',
@@ -36,37 +37,35 @@ const notEmptyResults = computed(() => data.value?.results.length);
 </script>
 
 <template>
-	<section class="py-10 lg:py-20">
-		<UContainer class="flex flex-col items-center md:items-start">
-			<UInput
-				v-model="searchValue"
-				:loading="status === 'pending'"
-				size="xl"
-				color="secondary"
-				placeholder="Search characters"
-				icon="i-lucide-search"
-				class="mb-10 w-80"
-				@keyup.enter="execute"
-			/>
+	<column-layout>
+		<UInput
+			v-model="searchValue"
+			:loading="status === 'pending'"
+			size="xl"
+			color="secondary"
+			placeholder="Search characters"
+			icon="i-lucide-search"
+			class="mb-10 w-96"
+			@keyup.enter="execute"
+		/>
 
-			<template v-if="notEmptyResults">
-				<div class="mb-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-					<character-card
-						v-for="character in data?.results"
-						:key="character.id.toString()"
-						:character="character"
-					/>
-				</div>
+		<template v-if="notEmptyResults">
+			<div class="mb-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+				<character-card
+					v-for="character in data?.results"
+					:key="character.id.toString()"
+					:character="character"
+				/>
+			</div>
 
-				<ClientOnly>
-					<UPagination
-						v-model:page="page"
-						:items-per-page="20"
-						:total="data?.info.count"
-						active-color="secondary"
-					/>
-				</ClientOnly>
-			</template>
-		</UContainer>
-	</section>
+			<ClientOnly>
+				<UPagination
+					v-model:page="page"
+					:items-per-page="20"
+					:total="data?.info.count"
+					active-color="secondary"
+				/>
+			</ClientOnly>
+		</template>
+	</column-layout>
 </template>
