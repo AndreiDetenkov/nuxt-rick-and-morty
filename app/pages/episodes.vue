@@ -1,5 +1,13 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { $api } = useNuxtApp();
+
+const { data } = await useAsyncData('episodes', () => $api.episodes.getAll());
+</script>
 
 <template>
-	<h1>Episodes page</h1>
+	<section class="py-10 lg:py-20">
+		<UContainer>
+			<pre>{{ data }}</pre>
+		</UContainer>
+	</section>
 </template>
