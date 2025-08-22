@@ -1,4 +1,4 @@
-import { charactersRepository } from '~/repositories/characters';
+import { EpisodesRepository, CharactersRepository } from '~/repositories';
 
 export default defineNuxtPlugin({
 	name: 'fetch',
@@ -14,7 +14,8 @@ export default defineNuxtPlugin({
 		});
 
 		const api = {
-			characters: charactersRepository(appFetch),
+			characters: new CharactersRepository(appFetch),
+			episodes: new EpisodesRepository(appFetch),
 		};
 
 		return {
