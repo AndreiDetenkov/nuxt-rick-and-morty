@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import ColumnLayout from '~/components/layout/column-layout.vue';
+import GridLayout from '~/components/layout/grid-layout.vue';
 
 useSeoMeta({
 	title: 'Rick and Morty Episodes',
@@ -20,12 +21,43 @@ useSeoMeta({
 	ogType: 'website',
 });
 
+const page = ref(1);
+
 const { $api } = useNuxtApp();
-const { data } = await useAsyncData('episodes', () => $api.episodes.getAll());
+const { data } = await useAsyncData('episodes', () => $api.episodes.getByPage(page.value), {
+	watch: [page],
+});
 </script>
 
 <template>
 	<column-layout>
-		<pre>{{ data }}</pre>
+		<grid-layout class="mb-10">
+			<UCard
+				v-for="episode in data?.results"
+				:key="episode.id"
+				class="hover:border-secondary cursor-pointer transition-all duration-300"
+			>
+				<template #header>
+					<NuxtImg
+						format="webp"
+						src="/noImage.webp"
+						alt="no image picture"
+						class="hidden md:block"
+					/>
+					<h2 class="dark:text-toned text-xl font-semibold sm:truncate">{{ episode.name }}</h2>
+					<h3 class="text-sm">{{ episode.episode }}</h3>
+					<span class="text-dimmed text-sm">{{ episode.air_date }}</span>
+				</template>
+			</UCard>
+		</grid-layout>
+
+		<LazyClientOnly>
+			<UPagination
+				v-model:page="page"
+				:items-per-page="20"
+				:total="data?.info.count"
+				active-color="secondary"
+			/>
+		</LazyClientOnly>
 	</column-layout>
 </template>
