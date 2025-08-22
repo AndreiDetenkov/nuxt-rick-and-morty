@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CharacterCard from '~/components/character/character-card.vue';
 import ColumnLayout from '~/components/layout/column-layout.vue';
+import GridLayout from '~/components/layout/grid-layout.vue';
 
 useSeoMeta({
 	title: 'Rick and Morty Characters',
@@ -50,13 +51,13 @@ const notEmptyResults = computed(() => data.value?.results.length);
 		/>
 
 		<template v-if="notEmptyResults">
-			<div class="mb-10 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+			<grid-layout class="mb-10">
 				<character-card
 					v-for="character in data?.results"
 					:key="character.id.toString()"
 					:character="character"
 				/>
-			</div>
+			</grid-layout>
 
 			<ClientOnly>
 				<UPagination

@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import CharacterCard from '~/components/character/character-card.vue';
 import ColumnLayout from '~/components/layout/column-layout.vue';
+import GridLayout from '~/components/layout/grid-layout.vue';
 
 useSeoMeta({
 	title: 'Rick and Morty Random Characters',
@@ -31,12 +32,12 @@ const { data: characters } = await useAsyncData('randomCharacters', () =>
 <template>
 	<hero-section />
 	<column-layout>
-		<div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+		<grid-layout>
 			<character-card
 				v-for="character in characters"
 				:key="character.created"
 				:character="character"
 			/>
-		</div>
+		</grid-layout>
 	</column-layout>
 </template>
