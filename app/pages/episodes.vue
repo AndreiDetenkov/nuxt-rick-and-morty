@@ -35,7 +35,7 @@ const { data } = await useAsyncData('episodes', () => $api.episodes.getByPage(pa
 			<UCard
 				v-for="episode in data?.results"
 				:key="episode.id"
-				class="hover:border-secondary cursor-pointer transition-all duration-300"
+				class="hover:border-secondary cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:border-2"
 			>
 				<template #header>
 					<NuxtImg
