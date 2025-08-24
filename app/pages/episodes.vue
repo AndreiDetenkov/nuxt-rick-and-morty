@@ -33,8 +33,8 @@ const { data } = await useAsyncData('episodes', () => $api.episodes.getByPage(pa
 <template>
 	<column-layout>
 		<grid-layout class="mb-10">
-			<episode-card v-for="episode in data?.results" :key="episode.id" :episode="episode"
-		/></grid-layout>
+			<episode-card v-for="episode in data?.results" :key="episode.id" :episode="episode" />
+		</grid-layout>
 
 		<LazyClientOnly>
 			<UPagination
