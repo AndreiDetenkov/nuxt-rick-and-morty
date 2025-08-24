@@ -11,9 +11,6 @@ importers:
       '@iconify-json/lucide':
         specifier: ^1.2.58
         version: 1.2.58
-      '@iconify-json/simple-icons':
-        specifier: ^1.2.44
-        version: 1.2.44
       '@nuxt/image':
         specifier: 1.11.0
         version: 1.11.0(@netlify/blobs@9.1.2)(db0@0.3.2)(ioredis@5.6.1)(magicast@0.3.5)
@@ -660,9 +657,6 @@ packages:
 
   '@iconify-json/lucide@1.2.58':
     resolution: {integrity: sha512-4ONe3ONaauEaf7wEQIvlWz2xHaMXUXuQeJVRBMu4PmsBrMEfdnc2vRZRyAudmcQo8yWmEsLu6WM7/5qWUdDJHQ==}
-
-  '@iconify-json/simple-icons@1.2.44':
-    resolution: {integrity: sha512-CdWgSPygwDlDbKtDWjvi3NtUefnkoepXv90n3dQxJerqzD9kI+nEJOiWUBM+eOyMYQKtxBpLWFBrgeotF0IZKw==}
 
   '@iconify/collections@1.0.569':
     resolution: {integrity: sha512-PclOVcAlvv55Fv5kRJmxk/KMoFLNBMLh0q9LDMlonIPJMUu958VsNw7F7CVurfyEbCf/54i7eF+q6LHqJxeQvg==}
@@ -6345,10 +6339,6 @@ snapshots:
   '@humanwhocodes/retry@0.4.3': {}
 
   '@iconify-json/lucide@1.2.58':
-    dependencies:
-      '@iconify/types': 2.0.0
-
-  '@iconify-json/simple-icons@1.2.44':
     dependencies:
       '@iconify/types': 2.0.0
 
