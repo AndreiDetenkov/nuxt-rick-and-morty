@@ -1,6 +1,36 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v0.0.3...v0.0.4)
+
+### 🚀 Enhancements
+
+- **repositories:** Refactor characters repository and add episodes repository ([0bc6d54](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/0bc6d54))
+- **episodes:** Fetch episodes data and update template ([ef35e54](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/ef35e54))
+- **episodes:** Add SEO meta tags to episodes page ([41860a0](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/41860a0))
+- **layout:** Introduce reusable ColumnLayout component ([c37ff09](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/c37ff09))
+- **layout:** Add reusable GridLayout component ([b21c39a](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/b21c39a))
+- **episodes:** Implement paginated episodes fetching and update UI ([5879ed2](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/5879ed2))
+- **episodes:** Enhance card hover effects ([c78efc2](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/c78efc2))
+- **episodes:** Add episode detail page and enhance episode card reusability ([7dca824](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/7dca824))
+- **tests:** Add unit tests for base components ([3806fa7](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/3806fa7))
+- **tests:** Add unit test for BaseColorModeBtn ([31da580](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/31da580))
+
+### 🩹 Fixes
+
+- **episodes:** Correct episode-card closing tag in episodes.vue ([d729c3c](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/d729c3c))
+- **tests:** Update setup file path and add logo data attribute ([5c8d5e1](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/5c8d5e1))
+
+### 🏡 Chore
+
+- **dependencies:** Remove unused simple-icons package ([0da6841](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/0da6841))
+
+### ❤️ Contributors
+
+- Andrei.detenkov <a.detenkov@gmail.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v0.0.2...v0.0.3)
