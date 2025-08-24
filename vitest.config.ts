@@ -6,7 +6,7 @@ const appDir = resolve(process.cwd(), 'app');
 export default defineVitestConfig({
 	test: {
 		environment: 'nuxt',
-		setupFiles: ['./tests/setup.ts'],
+		setupFiles: ['./setup.ts'],
 		globals: true,
 		coverage: {
 			provider: 'v8',
