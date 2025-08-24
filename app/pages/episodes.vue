@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import ColumnLayout from '~/components/layout/column-layout.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
+import EpisodeCard from '~/components/episode/episode-card.vue';
 
 useSeoMeta({
 	title: 'Rick and Morty Episodes',
@@ -32,24 +33,8 @@ const { data } = await useAsyncData('episodes', () => $api.episodes.getByPage(pa
 <template>
 	<column-layout>
 		<grid-layout class="mb-10">
-			<UCard
-				v-for="episode in data?.results"
-				:key="episode.id"
-				class="hover:border-secondary cursor-pointer transition-all duration-200 hover:-translate-y-1 hover:border-2"
-			>
-				<template #header>
-					<NuxtImg
-						format="webp"
-						src="/noImage.webp"
-						alt="no image picture"
-						class="hidden md:block"
-					/>
-					<h2 class="dark:text-toned text-xl font-semibold sm:truncate">{{ episode.name }}</h2>
-					<h3 class="text-sm">{{ episode.episode }}</h3>
-					<span class="text-dimmed text-sm">{{ episode.air_date }}</span>
-				</template>
-			</UCard>
-		</grid-layout>
+			<episode-card v-for="episode in data?.results" :key="episode.id" :episode="episode"
+		/></grid-layout>
 
 		<LazyClientOnly>
 			<UPagination

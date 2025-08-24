@@ -1,5 +1,5 @@
 import type { $Fetch } from 'nitropack/types';
-import type { Episodes } from '#shared/types';
+import type { Episode, Episodes } from '#shared/types';
 
 interface EpisodesRepositoryInterface {
 	getByPage: (page: number) => Promise<Episodes>;
@@ -18,6 +18,12 @@ export class EpisodesRepository implements EpisodesRepositoryInterface {
 			params: {
 				page,
 			},
+		});
+	}
+
+	getById(id: number): Promise<Episode> {
+		return this.appFetch(`/episode/${id}`, {
+			method: 'GET',
 		});
 	}
 }
