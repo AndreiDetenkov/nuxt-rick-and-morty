@@ -18,6 +18,7 @@ const icon = computed(() => (isDark.value ? 'i-lucide-moon' : 'i-lucide-sun'));
 		<UButton
 			:icon="icon"
 			variant="ghost"
+			data-test-id="color_mode_btn"
 			class="text-primary dark:text-primary-light"
 			@click="isDark = !isDark"
 		/>
