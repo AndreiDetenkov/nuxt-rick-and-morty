@@ -1,15 +1,15 @@
 <template>
 	<header class="h-16" data-test-id="header">
 		<UContainer class="grid h-full grid-cols-[auto_1fr_auto] items-center gap-4">
-			<section data-test-id="logo">
+			<section data-test-id="logo_section">
 				<base-logo />
 			</section>
 
-			<section class="flex items-center justify-end" data-test-id="nav">
+			<section class="flex items-center justify-end" data-test-id="nav_section">
 				<base-nav />
 			</section>
 
-			<section data-test-id="actions">
+			<section data-test-id="actions_section">
 				<base-color-mode-btn />
 			</section>
 		</UContainer>
