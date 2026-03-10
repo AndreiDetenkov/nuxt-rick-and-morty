@@ -22,4 +22,12 @@ export default defineNuxtConfig({
 	},
 
 	compatibilityDate: 'latest',
+
+	typescript: {
+		typeCheck: true,
+	},
+
+	experimental: {
+		typedPages: true,
+	},
 });
