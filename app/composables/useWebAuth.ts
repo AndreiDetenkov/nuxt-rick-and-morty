@@ -105,13 +105,6 @@ export function useWebAuth() {
 				optRes: optionsJSON.value,
 			},
 		});
-
-		if (verificationResponse.value.verified)
-			toast.add({
-				title: 'Success',
-				description: 'Registration successful',
-				color: 'success',
-			});
 	}
 
 	return {

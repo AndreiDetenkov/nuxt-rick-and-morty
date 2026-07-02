@@ -6,6 +6,8 @@ const email = ref();
 function generate() {
 	generateRegistrationOptions({ id: new Date().getTime(), email: email.value });
 }
+
+function auth() {}
 </script>
 
 <template>
@@ -20,8 +22,15 @@ function generate() {
 				/>
 			</UFormField>
 			<UButton @click="generate">Registration</UButton>
-			<pre>{{ verificationResponse }}</pre>
+			<UAlert
+				v-if="verificationResponse?.verified"
+				title="Register successfully!"
+				class="mt-4"
+				color="success"
+				icon="i-lucide-terminal"
+			/>
 			<USeparator class="my-4" />
+			<UButton @click="auth">Authenticate</UButton>
 		</UContainer>
 	</section>
 </template>

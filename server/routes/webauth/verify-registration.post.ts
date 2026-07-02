@@ -29,7 +29,7 @@ export default defineEventHandler(async (event) => {
 		return { verified: false };
 	}
 
-	return { verified: verification.verified };
+	return verification;
 
 	// const { registrationInfo } = verification;
 	// const { credential, credentialDeviceType, credentialBackedUp } = registrationInfo;
