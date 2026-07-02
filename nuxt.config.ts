@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+	compatibilityDate: '2026-07-02',
+
 	devtools: { enabled: true },
 
 	modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/test-utils/module', '@nuxt/image'],
@@ -21,13 +23,11 @@ export default defineNuxtConfig({
 		},
 	},
 
-	compatibilityDate: 'latest',
+	experimental: {
+		typedPages: true,
+	},
 
 	typescript: {
 		typeCheck: true,
-	},
-
-	experimental: {
-		typedPages: true,
 	},
 });
