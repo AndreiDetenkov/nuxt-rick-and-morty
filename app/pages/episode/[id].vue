@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { id } = useRoute().params;
+const { id } = useRoute().params as { id: string };
 const { $api } = useNuxtApp();
 const { data } = await useAsyncData(`character:${id}`, () => $api.episodes.getById(Number(id)));
 </script>
