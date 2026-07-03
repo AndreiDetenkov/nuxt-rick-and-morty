@@ -1,13 +1,11 @@
 <script setup lang="ts">
-const { generateRegistrationOptions, verificationResponse } = useWebAuth();
+const { registration, verificationResponse } = useWebAuth();
 
 const email = ref();
 
-function generate() {
-	generateRegistrationOptions({ id: new Date().getTime(), email: email.value });
+function reg() {
+	registration({ id: new Date().getTime(), email: email.value });
 }
-
-function auth() {}
 </script>
 
 <template>
@@ -21,7 +19,7 @@ function auth() {}
 					class="w-full max-w-sm"
 				/>
 			</UFormField>
-			<UButton @click="generate">Registration</UButton>
+			<UButton @click="reg">Registration</UButton>
 			<UAlert
 				v-if="verificationResponse?.verified"
 				title="Register successfully!"
@@ -30,7 +28,6 @@ function auth() {}
 				icon="i-lucide-terminal"
 			/>
 			<USeparator class="my-4" />
-			<UButton @click="auth">Authenticate</UButton>
 		</UContainer>
 	</section>
 </template>

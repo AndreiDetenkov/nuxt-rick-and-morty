@@ -67,7 +67,7 @@ export function useWebAuth() {
 	const registrationResponse = ref();
 	const verificationResponse = ref();
 
-	async function generateRegistrationOptions(body: { id: number; email: string }) {
+	async function registration(body: { id: number; email: string }) {
 		optionsJSON.value = await $fetch('/webauth/generate-registration-options', {
 			method: 'post',
 			body,
@@ -107,10 +107,13 @@ export function useWebAuth() {
 		});
 	}
 
+	async function authentication() {}
+
 	return {
 		optionsJSON,
 		registrationResponse,
 		verificationResponse,
-		generateRegistrationOptions,
+		registration,
+		authentication,
 	};
 }
