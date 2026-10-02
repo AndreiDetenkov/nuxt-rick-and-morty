@@ -1,4 +1,4 @@
-import type { $Fetch } from 'nitropack/types';
+import type { $Fetch } from 'ofetch';
 import type { Episode, Episodes } from '#shared/types';
 
 interface EpisodesRepositoryInterface {

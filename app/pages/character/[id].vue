@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { StatusEnum } from '#shared/types';
-import { getIdFromUrl } from '#shared/utils/resource-url';
+import { getIdFromResourceUrl } from '#shared/utils/resource-url';
 import BaseBackLink from '~/components/base/base-back-link.vue';
 import EpisodeCard from '~/components/episode/episode-card.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
@@ -50,7 +50,7 @@ const details = computed(() => {
 	].filter((item) => item.value);
 });
 
-const episodeIds = computed(() => character.value?.episode.map(getIdFromUrl) ?? []);
+const episodeIds = computed(() => character.value?.episode.map(getIdFromResourceUrl) ?? []);
 
 const {
 	data: episodes,

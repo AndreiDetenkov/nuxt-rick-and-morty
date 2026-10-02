@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getIdFromUrl } from '#shared/utils/resource-url';
+import { getIdFromResourceUrl } from '#shared/utils/resource-url';
 import BaseBackLink from '~/components/base/base-back-link.vue';
 import CharacterCard from '~/components/character/character-card.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
@@ -22,7 +22,7 @@ const episode = await useRequiredAsyncData(
 	},
 );
 
-const characterIds = computed(() => episode.value?.characters.map(getIdFromUrl) ?? []);
+const characterIds = computed(() => episode.value?.characters.map(getIdFromResourceUrl) ?? []);
 
 const {
 	data: characters,

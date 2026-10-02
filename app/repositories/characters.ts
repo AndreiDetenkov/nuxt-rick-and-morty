@@ -1,4 +1,4 @@
-import type { $Fetch } from 'nitropack/types';
+import type { $Fetch } from 'ofetch';
 import type { Character, CharactersByPage } from '#shared/types';
 import { generateRandomNumbers } from '#shared/utils/random-numbers';
 
