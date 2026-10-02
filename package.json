@@ -1,5 +1,6 @@
 {
 	"name": "nuxt-app",
+	"version": "0.0.4",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -10,15 +11,12 @@
 		"postinstall": "nuxt prepare",
 		"lint": "eslint .",
 		"lint:fix": "eslint --fix .",
-		"release": "npx changelogen@latest --release --push",
 		"test": "vitest",
 		"test:coverage": "vitest --coverage"
 	},
 	"dependencies": {
 		"@nuxt/image": "1.11.0",
 		"@nuxt/ui": "4.9.0",
-		"@simplewebauthn/browser": "^13.3.0",
-		"@simplewebauthn/server": "^13.3.2",
 		"nuxt": "4.4.8",
 		"tailwindcss": "^4.3.2"
 	},
@@ -47,6 +45,5 @@
 			"prettier --write",
 			"eslint --fix"
 		]
-	},
-	"version": "0.0.4"
+	}
 }
