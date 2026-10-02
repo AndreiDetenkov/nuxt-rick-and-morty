@@ -25,7 +25,7 @@ const { episode } = defineProps<{
 						alt=""
 						width="600"
 						height="500"
-						class="aspect-6/5 h-full w-full object-contain transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none"
+						class="aspect-6/5 h-full w-full object-contain transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none dark:invert"
 					/>
 				</div>
 

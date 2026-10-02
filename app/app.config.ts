@@ -4,5 +4,10 @@ export default defineAppConfig({
 		colors: {
 			secondary: 'amber',
 		},
+		badge: {
+			compoundVariants: [
+				{ color: 'secondary', variant: 'subtle', class: 'text-secondary-700 dark:text-secondary' },
+			],
+		},
 	},
 });
