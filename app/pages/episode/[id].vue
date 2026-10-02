@@ -7,26 +7,13 @@ const { id } = useRoute('episode-id').params;
 
 const { $api } = useNuxtApp();
 
-const { data: episode, error } = await useAsyncData(`episode:${id}`, () =>
+const { data: episode } = await useAsyncData(`episode:${id}`, () =>
 	$api.episodes.getById(Number(id)),
 );
-
-if (error.value && error.value.statusCode !== 404) {
-	throw createError({
-		statusCode: error.value.statusCode ?? 500,
-		statusMessage: "Couldn't load episode",
-		fatal: true,
-	});
-}
 
 if (!episode.value) {
 	throw createError({ statusCode: 404, statusMessage: 'Episode not found', fatal: true });
 }
-
-const seasonLabel = computed(() => {
-	const match = episode.value?.episode.match(/^S(\d+)E(\d+)$/);
-	return match ? `Season ${Number(match[1])} · Episode ${Number(match[2])}` : '';
-});
 
 const characterIds = computed(() => episode.value?.characters.map(getIdFromUrl) ?? []);
 
@@ -38,6 +25,11 @@ const {
 	$api.characters.getByIds(characterIds.value),
 );
 
+const seasonLabel = computed(() => {
+	const match = episode.value?.episode.match(/^S(\d+)E(\d+)$/);
+	return match ? `Season ${Number(match[1])} · Episode ${Number(match[2])}` : '';
+});
+
 useSeoMeta({
 	title: () => `${episode.value?.name} (${episode.value?.episode}) | Rick and Morty`,
 	ogTitle: () => `${episode.value?.name} (${episode.value?.episode}) | Rick and Morty`,
@@ -45,7 +37,6 @@ useSeoMeta({
 		`${episode.value?.name} — ${seasonLabel.value} of Rick and Morty, aired ${episode.value?.air_date}. See all ${characterIds.value.length} characters appearing in the episode.`,
 	ogDescription: () =>
 		`${episode.value?.name} — ${seasonLabel.value} of Rick and Morty, aired ${episode.value?.air_date}.`,
-	ogImage: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
 	ogType: 'article',
 });
 </script>
