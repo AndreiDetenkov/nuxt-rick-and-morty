@@ -13,6 +13,11 @@ export default defineVitestConfig({
 			reporter: ['text', 'json', 'html'],
 			exclude: ['node_modules/', '.nuxt/', 'coverage/', 'tests/', '**/*.config.*', '**/*.test.*'],
 		},
+		onConsoleLog(log) {
+			if (log.includes('<Suspense> is an experimental feature')) {
+				return false;
+			}
+		},
 	},
 	resolve: {
 		alias: {
