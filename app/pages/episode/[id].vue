@@ -2,18 +2,24 @@
 import { getIdFromUrl } from '#shared/utils/resource-url';
 import CharacterCard from '~/components/character/character-card.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
+import { useRequiredAsyncData } from '~/composables/use-required-async-data';
+import { validateIdParam } from '~/utils/validate-id-param';
+
+definePageMeta({
+	validate: validateIdParam('Episode not found'),
+});
 
 const { id } = useRoute('episode-id').params;
 
 const { $api } = useNuxtApp();
 
-const { data: episode } = await useAsyncData(`episode:${id}`, () =>
-	$api.episodes.getById(Number(id)),
+const episode = await useRequiredAsyncData(
+	`episode:${id}`,
+	() => $api.episodes.getById(Number(id)),
+	{
+		name: 'Episode',
+	},
 );
-
-if (!episode.value) {
-	throw createError({ statusCode: 404, statusMessage: 'Episode not found', fatal: true });
-}
 
 const characterIds = computed(() => episode.value?.characters.map(getIdFromUrl) ?? []);
 
@@ -108,7 +114,7 @@ useSeoMeta({
 			<grid-layout v-else>
 				<template v-if="charactersStatus === 'pending'">
 					<div
-						v-for="n in characterIds.length"
+						v-for="n in Math.min(characterIds.length, 10)"
 						:key="n"
 						class="ring-default flex overflow-hidden rounded-lg ring sm:flex-col"
 					>
@@ -116,6 +122,8 @@ useSeoMeta({
 						<div class="flex flex-1 flex-col justify-center gap-2 p-3 sm:p-4">
 							<USkeleton class="h-6 w-3/4" />
 							<USkeleton class="h-4 w-1/2" />
+							<USkeleton class="h-4 w-2/3" />
+							<USkeleton class="h-4 w-1/3" />
 						</div>
 					</div>
 				</template>
