@@ -6,7 +6,9 @@ const { image, name } = defineProps<{ image: string; name: string }>();
 	<nuxt-img
 		:src="image"
 		:alt="name"
-		class="h-80 w-full rounded-t-lg object-fill transition-all duration-300 hover:scale-105 sm:h-68 md:h-62 lg:h-54"
+		width="300"
+		height="300"
+		class="aspect-square h-full w-full object-cover transition-transform duration-300 group-hover:scale-105 motion-reduce:transition-none"
 		placeholder
 	/>
 </template>

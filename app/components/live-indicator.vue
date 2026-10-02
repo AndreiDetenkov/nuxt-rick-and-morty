@@ -13,5 +13,5 @@ const statusClasses = computed(() => {
 </script>
 
 <template>
-	<div class="mr-1.5 h-3 w-3 rounded-full" :class="statusClasses" data-test-id="live_indicator" />
+	<div class="size-3 rounded-full" :class="statusClasses" data-test-id="live_indicator" />
 </template>

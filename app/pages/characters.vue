@@ -41,7 +41,7 @@ const notEmptyResults = computed(() => data.value?.results.length);
 			color="secondary"
 			placeholder="Search characters"
 			icon="i-lucide-search"
-			class="mb-10 w-96"
+			class="mb-10 w-full sm:w-96"
 			@keyup.enter="execute"
 		/>
 

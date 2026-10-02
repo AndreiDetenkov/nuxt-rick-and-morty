@@ -110,10 +110,10 @@ useSeoMeta({
 					<div
 						v-for="n in characterIds.length"
 						:key="n"
-						class="ring-default flex flex-col overflow-hidden rounded-lg ring"
+						class="ring-default flex overflow-hidden rounded-lg ring sm:flex-col"
 					>
-						<USkeleton class="h-80 rounded-none sm:h-68 md:h-62 lg:h-54" />
-						<div class="flex flex-col gap-2 p-4">
+						<USkeleton class="aspect-square w-28 shrink-0 rounded-none sm:w-full" />
+						<div class="flex flex-1 flex-col justify-center gap-2 p-3 sm:p-4">
 							<USkeleton class="h-6 w-3/4" />
 							<USkeleton class="h-4 w-1/2" />
 						</div>
