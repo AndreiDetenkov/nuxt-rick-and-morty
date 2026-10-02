@@ -3,6 +3,7 @@ import type { Episode, Episodes } from '#shared/types';
 
 interface EpisodesRepositoryInterface {
 	getByPage: (page: number) => Promise<Episodes>;
+	getById: (id: number) => Promise<Episode>;
 }
 
 export class EpisodesRepository implements EpisodesRepositoryInterface {
