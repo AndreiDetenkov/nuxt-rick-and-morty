@@ -10,7 +10,6 @@ useSeoMeta({
 		'Browse through all episodes of Rick and Morty, including detailed information about each episode, air dates, and characters appearing in them.',
 	ogDescription:
 		'Browse through all episodes of Rick and Morty, including detailed information about each episode, air dates, and characters appearing in them.',
-	ogImage: 'https://rickandmortyapi.com/api/episode/avatar/1.jpeg',
 	ogUrl: 'https://rickandmortyapi.com/api/episode',
 	author: 'Rick and Morty Fan Site',
 	robots: 'index, follow',
