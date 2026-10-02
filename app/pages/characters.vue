@@ -12,11 +12,6 @@ useSeoMeta({
 		'Explore all Rick and Morty characters from the multiverse. Browse through hundreds of characters with detailed information, images, and stats from the hit animated series.',
 	ogImage: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
 	ogUrl: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-	twitterTitle: 'Rick and Morty Characters',
-	twitterDescription:
-		'Explore all Rick and Morty characters from the multiverse. Browse hundreds of characters with detailed info and images.',
-	twitterImage: "'https://rickandmortyapi.com/api/character/avatar/1.jpeg",
-	keywords: 'Rick and Morty, characters, animated series, multiverse, cartoon characters',
 	author: 'Rick and Morty Fan Site',
 	robots: 'index, follow',
 	ogType: 'website',
