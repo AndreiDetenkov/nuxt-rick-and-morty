@@ -23,9 +23,9 @@
 	"devDependencies": {
 		"@iconify-json/lucide": "^1.2.115",
 		"@nuxt/eslint": "^1.16.0",
-		"@nuxt/test-utils": "3.19.2",
+		"@nuxt/test-utils": "4.3.3",
 		"@vitejs/plugin-vue": "^6.0.7",
-		"@vitest/coverage-v8": "^3.2.6",
+		"@vitest/coverage-v8": "^5.0.3",
 		"@vue/language-server": "^3.3.6",
 		"@vue/test-utils": "^2.4.11",
 		"eslint": "^9.39.4",
