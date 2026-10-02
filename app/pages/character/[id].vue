@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { StatusEnum } from '#shared/types';
 import { getIdFromUrl } from '#shared/utils/resource-url';
+import BaseBackLink from '~/components/base/base-back-link.vue';
 import EpisodeCard from '~/components/episode/episode-card.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
 import { useRequiredAsyncData } from '~/composables/use-required-async-data';
@@ -72,14 +73,7 @@ useSeoMeta({
 <template>
 	<section v-if="character" class="py-10 lg:py-20">
 		<UContainer>
-			<UButton
-				to="/characters"
-				icon="i-lucide-arrow-left"
-				label="All characters"
-				color="neutral"
-				variant="link"
-				class="-ml-2.5"
-			/>
+			<base-back-link to="/characters" label="All characters" />
 
 			<header
 				data-test-id="character_header"

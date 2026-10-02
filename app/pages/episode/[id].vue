@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { getIdFromUrl } from '#shared/utils/resource-url';
+import BaseBackLink from '~/components/base/base-back-link.vue';
 import CharacterCard from '~/components/character/character-card.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
 import { useRequiredAsyncData } from '~/composables/use-required-async-data';
@@ -50,14 +51,7 @@ useSeoMeta({
 <template>
 	<section v-if="episode" class="py-10 lg:py-20">
 		<UContainer>
-			<UButton
-				to="/episodes"
-				icon="i-lucide-arrow-left"
-				label="All episodes"
-				color="neutral"
-				variant="link"
-				class="-ml-2.5"
-			/>
+			<base-back-link to="/episodes" label="All episodes" />
 
 			<header data-test-id="episode_header" class="mt-8 flex flex-col gap-4 lg:mt-12">
 				<div class="flex flex-wrap items-center gap-3">
