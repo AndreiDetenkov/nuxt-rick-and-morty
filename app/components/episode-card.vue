@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Episode } from '#shared/types';
+import type { Episode } from '#shared/types.ts';
 import BaseMediaCard from '~/components/base/base-media-card.vue';
 
 const { episode } = defineProps<{

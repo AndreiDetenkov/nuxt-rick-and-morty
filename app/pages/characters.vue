@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CharacterCard from '~/components/character/character-card.vue';
+import CharacterCard from '~/components/character-card.vue';
 import ColumnLayout from '~/components/layout/column-layout.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Character } from '#shared/types';
+import type { Character } from '#shared/types.ts';
 import BaseMediaCard from '~/components/base/base-media-card.vue';
 
 const { character } = defineProps<{ character: Character }>();

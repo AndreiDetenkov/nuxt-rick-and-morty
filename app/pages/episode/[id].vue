@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { getIdFromResourceUrl } from '#shared/utils/resource-url';
 import BaseBackLink from '~/components/base/base-back-link.vue';
-import CharacterCard from '~/components/character/character-card.vue';
+import CharacterCard from '~/components/character-card.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
 import { useRequiredAsyncData } from '~/composables/use-required-async-data';
 import { validateIdParam } from '~/utils/validate-id-param';

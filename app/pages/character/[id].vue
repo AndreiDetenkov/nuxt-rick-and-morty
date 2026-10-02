@@ -2,7 +2,7 @@
 import { StatusEnum } from '#shared/types';
 import { getIdFromResourceUrl } from '#shared/utils/resource-url';
 import BaseBackLink from '~/components/base/base-back-link.vue';
-import EpisodeCard from '~/components/episode/episode-card.vue';
+import EpisodeCard from '~/components/episode-card.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
 import { useRequiredAsyncData } from '~/composables/use-required-async-data';
 import { validateIdParam } from '~/utils/validate-id-param';

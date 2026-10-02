@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ColumnLayout from '~/components/layout/column-layout.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
-import EpisodeCard from '~/components/episode/episode-card.vue';
+import EpisodeCard from '~/components/episode-card.vue';
 
 useSeoMeta({
 	title: 'Rick and Morty Episodes',
