@@ -1,6 +1,54 @@
 # Changelog
 
 
+## v1.0.0
+
+[compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v0.0.4...v1.0.0)
+
+### 🚀 Enhancements
+
+- **config:** Enable TypeScript type checking and typed pages ([b39a3f8](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/b39a3f8))
+- **config:** Optimize Vite dependencies ([30c3c42](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/30c3c42))
+- **webauthn:** Add WebAuthn registration and verification ([80e7869](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/80e7869))
+- **webauthn:** Improve registration feedback and add authentication button ([536f250](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/536f250))
+- **episode:** Display episode details and characters on episode view ([4b3daac](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/4b3daac))
+- **api:** Add cached handler for Rick and Morty API requests ([c9187fc](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/c9187fc))
+- Enhance data fetching and validation ([4711d79](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/4711d79))
+- **ui:** Introduce reusable BaseBackLink component ([3b58eba](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/3b58eba))
+- **vitest:** Suppress experimental Suspense warning in console ([94db518](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/94db518))
+
+### 🩹 Fixes
+
+- **types:** Add explicit type annotations for route params ([12034eb](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/12034eb))
+
+### 💅 Refactors
+
+- **webauthn:** Rename functions and simplify composable usage ([2caa1c2](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/2caa1c2))
+- **webauthn:** Remove WebAuthn-related code ([21f3343](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/21f3343))
+- **seo:** Remove unused Twitter meta properties ([5e88441](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/5e88441))
+- **ui:** Improve `episode-card` design and accessibility ([417f0a1](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/417f0a1))
+- **ui:** Enhance `episode-card` styles and introduce dark mode support ([441e401](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/441e401))
+- **seo:** Remove unused `ogImage` property from `episodes.vue` ([4eb8c6f](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/4eb8c6f))
+- **ui:** Improve character and episode card responsiveness ([65408b6](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/65408b6))
+- **ui:** Replace card implementations with reusable BaseMediaCard ([cbb072f](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/cbb072f))
+- Update fetch library and rename utility for clarity ([25bc2ab](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/25bc2ab))
+- **ui:** Merge hero title and image components into hero section ([cfc0475](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/cfc0475))
+- Simplify component imports and adjust type paths ([2b4a7a8](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/2b4a7a8))
+
+### 🏡 Chore
+
+- **dependencies:** Update pnpm-lock.yaml with dependency upgrades ([98d62a7](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/98d62a7))
+- **dependencies:** Update pnpm-lock.yaml with new dependencies ([bda02e5](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/bda02e5))
+- **dependencies:** Remove WebAuthn and related unused dependencies ([07bb0a8](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/07bb0a8))
+- **dependencies:** Update dependencies and pnpm workspace configs ([8656165](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/8656165))
+- **dependencies:** Update pnpm workspace dependencies ([ef25aee](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/ef25aee))
+- **dependencies:** Update dependencies in pnpm-lock.yaml ([2cb5d24](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/2cb5d24))
+- **dependencies:** Update @nuxt/test-utils, @vitest/coverage-v8 ([9e11041](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/9e11041))
+
+### ❤️ Contributors
+
+- Andrei.detenkov <a.detenkov@gmail.com>
+
 ## v0.0.4
 
 [compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v0.0.3...v0.0.4)
