@@ -1,12 +1,10 @@
-import { FetchError } from 'ofetch';
-
-const ALLOWED_PATH = /^(character|episode|location)(\/[\d,]+)?$/;
+import { isAllowedApiPath, toUpstreamError } from '../utils/upstream-api';
 
 export default defineCachedEventHandler(
 	async (event) => {
 		const path = getRouterParam(event, 'path') ?? '';
 
-		if (!ALLOWED_PATH.test(path)) {
+		if (!isAllowedApiPath(path)) {
 			throw createError({ statusCode: 404, statusMessage: 'Not found' });
 		}
 
@@ -15,13 +13,7 @@ export default defineCachedEventHandler(
 		try {
 			return await $fetch(path, { baseURL: apiBaseUrl, query: getQuery(event) });
 		} catch (error) {
-			if (error instanceof FetchError) {
-				throw createError({
-					statusCode: error.statusCode ?? 500,
-					statusMessage: error.statusMessage,
-				});
-			}
-			throw error;
+			throw toUpstreamError(error);
 		}
 	},
 	{
