@@ -21,7 +21,7 @@ const page = ref(1);
 const searchValue = ref('');
 
 const { $api } = useNuxtApp();
-const { data, execute, status } = await useAsyncData(
+const { data, error, execute, status } = await useAsyncData(
 	'characters',
 	() => $api.characters.filterCharacters(page.value, searchValue.value.trim()),
 	{
@@ -31,6 +31,12 @@ const { data, execute, status } = await useAsyncData(
 
 const notEmptyResults = computed(() => data.value?.results.length);
 
+const nothingFound = computed(
+	() => error.value?.status === 404 || (status.value === 'success' && !notEmptyResults.value),
+);
+
+const loadFailed = computed(() => !!error.value && error.value.status !== 404);
+
 function searchCharacters() {
 	if (page.value === 1) {
 		execute();
@@ -38,6 +44,11 @@ function searchCharacters() {
 	}
 
 	page.value = 1;
+}
+
+function clearSearch() {
+	searchValue.value = '';
+	searchCharacters();
 }
 </script>
 
@@ -54,7 +65,42 @@ function searchCharacters() {
 			@keyup.enter="searchCharacters"
 		/>
 
-		<template v-if="notEmptyResults">
+		<UEmpty
+			v-if="nothingFound"
+			data-test-id="characters_empty"
+			icon="i-lucide-search-x"
+			title="No characters found"
+			description="Nobody in the multiverse matches this name. Try another one."
+			:actions="[
+				{
+					label: 'Clear search',
+					icon: 'i-lucide-x',
+					color: 'neutral',
+					variant: 'subtle',
+					onClick: clearSearch,
+				},
+			]"
+		/>
+
+		<UAlert
+			v-else-if="loadFailed"
+			data-test-id="characters_error"
+			title="Couldn't load characters"
+			description="Something went wrong while loading characters."
+			icon="i-lucide-circle-alert"
+			color="error"
+			variant="subtle"
+			:actions="[
+				{
+					label: 'Try again',
+					color: 'error',
+					variant: 'outline',
+					onClick: () => execute(),
+				},
+			]"
+		/>
+
+		<template v-else-if="notEmptyResults">
 			<grid-layout class="mb-10">
 				<character-card
 					v-for="character in data?.results"
