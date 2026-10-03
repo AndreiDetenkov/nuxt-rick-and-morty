@@ -1,6 +1,36 @@
 # Changelog
 
 
+## v1.1.0
+
+[compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v1.0.0...v1.1.0)
+
+### 🚀 Enhancements
+
+- **characters:** Improve error handling and add clear search option ([1b7c42b](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/1b7c42b))
+- **mcp:** Add Playwright MCP server configuration ([fae95d3](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/fae95d3))
+
+### 💅 Refactors
+
+- **utils:** Ensure unique random number generation ([5da7735](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/5da7735))
+- **characters:** Update search functionality ([686865a](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/686865a))
+
+### 📖 Documentation
+
+- Add CLAUDE.md with development and architectural guidelines ([743fa83](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/743fa83))
+
+### ✅ Tests
+
+- **utils:** Add unit tests for validation, random numbers, and resource URL ([6a47a9a](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/6a47a9a))
+- **repositories:** Add unit tests for CharactersRepository and EpisodesRepository ([10d5e11](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/10d5e11))
+- **composables:** Add unit tests for `useRequiredAsyncData` ([4b2898e](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/4b2898e))
+- **utils:** Add unit tests for `upstream-api` ([d4a6e8c](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/d4a6e8c))
+- **components:** Add unit tests for CharacterCard, EpisodeCard, and LiveIndicator ([bc54119](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/bc54119))
+
+### ❤️ Contributors
+
+- Andrei.detenkov <a.detenkov@gmail.com>
+
 ## v1.0.0
 
 [compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v0.0.4...v1.0.0)

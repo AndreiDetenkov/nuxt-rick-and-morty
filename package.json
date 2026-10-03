@@ -1,6 +1,6 @@
 {
 	"name": "nuxt-app",
-	"version": "1.0.0",
+	"version": "1.1.0",
 	"private": true,
 	"type": "module",
 	"scripts": {
@@ -12,7 +12,8 @@
 		"lint": "eslint .",
 		"lint:fix": "eslint --fix .",
 		"test": "vitest",
-		"test:coverage": "vitest --coverage"
+		"test:coverage": "vitest --coverage",
+		"release": "npx changelogen@latest --release"
 	},
 	"dependencies": {
 		"@nuxt/image": "2.1.0",
