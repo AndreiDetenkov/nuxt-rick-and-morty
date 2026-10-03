@@ -30,6 +30,15 @@ const { data, execute, status } = await useAsyncData(
 );
 
 const notEmptyResults = computed(() => data.value?.results.length);
+
+function searchCharacters() {
+	if (page.value === 1) {
+		execute();
+		return;
+	}
+
+	page.value = 1;
+}
 </script>
 
 <template>
@@ -42,7 +51,7 @@ const notEmptyResults = computed(() => data.value?.results.length);
 			placeholder="Search characters"
 			icon="i-lucide-search"
 			class="mb-10 w-full sm:w-96"
-			@keyup.enter="execute"
+			@keyup.enter="searchCharacters"
 		/>
 
 		<template v-if="notEmptyResults">
