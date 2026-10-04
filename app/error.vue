@@ -43,8 +43,8 @@ function retry() {
 				:icon="isNotFound ? 'i-lucide-orbit' : 'i-lucide-circle-alert'"
 				:clear="false"
 				:ui="{
-					statusCode: 'text-secondary',
-					statusMessage: 'text-primary dark:text-primary-light',
+					statusCode: 'text-secondary text-5xl py-4',
+					statusMessage: 'text-primary dark:text-primary-light mb-4',
 				}"
 			>
 				<template #links>
