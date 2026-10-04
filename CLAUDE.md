@@ -28,7 +28,7 @@ pnpm nuxi typecheck                                        # vue-tsc
 pnpm vitest run                                            # all tests
 ```
 
-The pre-commit hook runs `lint-staged` (prettier + eslint --fix) on `app/**/*.{ts,vue}` only. Prettier: tabs, single quotes, print width 100, tailwind class sorting.
+The pre-commit hook runs `lint-staged` (prettier + eslint --fix) on `{app,server,shared}/**/*.{ts,vue}`. Prettier: tabs, single quotes, print width 100, tailwind class sorting.
 
 ## Architecture
 

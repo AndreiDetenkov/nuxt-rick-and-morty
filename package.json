@@ -45,7 +45,7 @@
 	},
 	"packageManager": "pnpm@10.14.0",
 	"lint-staged": {
-		"app/**/*.{ts,vue}": [
+		"{app,server,shared}/**/*.{ts,vue}": [
 			"prettier --write",
 			"eslint --fix"
 		]
