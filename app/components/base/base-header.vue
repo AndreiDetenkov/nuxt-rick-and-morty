@@ -1,17 +1,39 @@
+<script setup lang="ts">
+import BaseColorModeBtn from '~/components/base/base-color-mode-btn.vue';
+import BaseLogo from '~/components/base/base-logo.vue';
+import BaseMenuToggle from '~/components/base/base-menu-toggle.vue';
+import BaseNav from '~/components/base/base-nav.vue';
+</script>
+
 <template>
-	<header class="h-16" data-test-id="header">
-		<UContainer class="grid h-full grid-cols-[auto_1fr_auto] items-center gap-4">
-			<section data-test-id="logo_section">
-				<base-logo />
-			</section>
+	<UHeader
+		data-test-id="header"
+		:ui="{
+			center: 'hidden md:flex',
+			content: 'md:hidden',
+			overlay: 'md:hidden',
+		}"
+	>
+		<template #left>
+			<base-logo />
+		</template>
 
-			<section class="flex items-center justify-end" data-test-id="nav_section">
-				<base-nav />
-			</section>
+		<base-nav />
 
-			<section data-test-id="actions_section">
-				<base-color-mode-btn />
-			</section>
-		</UContainer>
-	</header>
+		<template #right>
+			<base-color-mode-btn />
+		</template>
+
+		<template #toggle="{ open, toggle, ui }">
+			<base-menu-toggle
+				:open="open"
+				:class="ui.toggle({ class: 'md:hidden', toggleSide: 'right' })"
+				@click="toggle"
+			/>
+		</template>
+
+		<template #body>
+			<base-nav orientation="vertical" />
+		</template>
+	</UHeader>
 </template>

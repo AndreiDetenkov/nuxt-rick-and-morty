@@ -1,41 +1,49 @@
-import { describe, it, expect, beforeEach } from 'vitest';
-import { shallowMount, type VueWrapper } from '@vue/test-utils';
+import { describe, it, expect } from 'vitest';
+import { shallowMount } from '@vue/test-utils';
+import type { NavigationMenuItem } from '@nuxt/ui';
 import BaseNav from '~/components/base/base-nav.vue';
 
-describe('BaseNav.vue', () => {
-	let wrapper: VueWrapper;
+const UNavigationMenuStub = {
+	name: 'UNavigationMenu',
+	props: ['items', 'orientation'],
+	template: '<nav />',
+};
 
-	beforeEach(() => {
-		wrapper = shallowMount(BaseNav, {
-			global: {
-				stubs: {
-					ULink: {
-						template: '<a :class="$attrs.class" :href="$attrs.to"><slot /></a>',
-					},
-				},
+function mountNav(props: { orientation?: 'horizontal' | 'vertical' } = {}) {
+	return shallowMount(BaseNav, {
+		props,
+		global: {
+			stubs: {
+				UNavigationMenu: UNavigationMenuStub,
 			},
-		});
+		},
 	});
+}
 
+describe('BaseNav.vue', () => {
 	it('should render component', () => {
-		expect(wrapper.find('[data-test-id="nav"]').exists()).toBe(true);
+		expect(mountNav().find('[data-test-id="nav"]').exists()).toBe(true);
 	});
 
-	it('renders navigation links correctly', () => {
-		const navLinks = wrapper.findAll('[data-test-id="nav_link"]');
+	it('should pass navigation items', () => {
+		const items: NavigationMenuItem[] = mountNav()
+			.findComponent(UNavigationMenuStub)
+			.props('items');
 
-		expect(navLinks.length).toBe(3);
+		expect(items.map(({ label, to }) => ({ label, to }))).toEqual([
+			{ label: 'Characters', to: '/characters' },
+			{ label: 'Episodes', to: '/episodes' },
+			{ label: 'Locations', to: '/locations' },
+		]);
+	});
 
-		expect(navLinks[0]).toBeDefined();
-		expect(navLinks[1]).toBeDefined();
+	it('should be horizontal by default', () => {
+		expect(mountNav().findComponent(UNavigationMenuStub).props('orientation')).toBe('horizontal');
+	});
 
-		expect(navLinks[0]!.text()).toBe('Characters');
-		expect(navLinks[0]!.attributes('to')).toBe('/characters');
-
-		expect(navLinks[1]!.text()).toBe('Episodes');
-		expect(navLinks[1]!.attributes('to')).toBe('/episodes');
-
-		expect(navLinks[2]!.text()).toBe('Locations');
-		expect(navLinks[2]!.attributes('to')).toBe('/locations');
+	it('should be vertical when orientation prop is vertical', () => {
+		expect(
+			mountNav({ orientation: 'vertical' }).findComponent(UNavigationMenuStub).props('orientation'),
+		).toBe('vertical');
 	});
 });

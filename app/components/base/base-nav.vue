@@ -1,38 +1,35 @@
 <script setup lang="ts">
-export interface NavItem {
-	name: string;
-	path: string;
-}
+import type { NavigationMenuItem } from '@nuxt/ui';
 
-const navList: NavItem[] = [
+const { orientation = 'horizontal' } = defineProps<{
+	orientation?: 'horizontal' | 'vertical';
+}>();
+
+const navItems: NavigationMenuItem[] = [
 	{
-		name: 'Characters',
-		path: '/characters',
+		label: 'Characters',
+		to: '/characters',
 	},
 	{
-		name: 'Episodes',
-		path: '/episodes',
+		label: 'Episodes',
+		to: '/episodes',
 	},
 	{
-		name: 'Locations',
-		path: '/locations',
+		label: 'Locations',
+		to: '/locations',
 	},
 ];
 </script>
 
 <template>
-	<nav data-test-id="nav" class="flex items-center gap-7">
-		<ULink
-			v-for="(nav, index) in navList"
-			:key="`nav-item-${index}`"
-			data-test-id="nav_link"
-			:to="nav.path"
-			raw
-			class="dark:text-primary-light hover:text-secondary font-semibold transition-colors duration-300"
-			inactive-class="text-primary"
-			active-class="text-secondary"
-		>
-			{{ nav.name }}
-		</ULink>
-	</nav>
+	<UNavigationMenu
+		data-test-id="nav"
+		:items="navItems"
+		:orientation="orientation"
+		color="secondary"
+		:class="{ '-mx-2.5': orientation === 'vertical' }"
+		:ui="{
+			link: 'text-primary dark:text-primary-light hover:text-secondary dark:hover:text-secondary aria-[current=page]:text-secondary dark:aria-[current=page]:text-secondary text-base font-semibold transition-colors duration-300',
+		}"
+	/>
 </template>
