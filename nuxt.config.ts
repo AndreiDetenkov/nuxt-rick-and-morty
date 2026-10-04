@@ -6,6 +6,12 @@ export default defineNuxtConfig({
 
 	modules: ['@nuxt/ui', '@nuxt/eslint', '@nuxt/test-utils/module', '@nuxt/image'],
 
+	app: {
+		head: {
+			htmlAttrs: { lang: 'en' },
+		},
+	},
+
 	css: ['~/assets/css/main.css'],
 
 	icon: {

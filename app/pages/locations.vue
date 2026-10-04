@@ -3,17 +3,10 @@ import ColumnLayout from '~/components/layout/column-layout.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
 import LocationCard from '~/components/location-card.vue';
 
-useSeoMeta({
+usePageSeo({
 	title: 'Rick and Morty Locations',
-	ogTitle: 'Rick and Morty Locations',
 	description:
 		'Browse through all locations of Rick and Morty, including their type, dimension, and the characters residing there.',
-	ogDescription:
-		'Browse through all locations of Rick and Morty, including their type, dimension, and the characters residing there.',
-	ogUrl: 'https://rickandmortyapi.com/api/location',
-	author: 'Rick and Morty Fan Site',
-	robots: 'index, follow',
-	ogType: 'website',
 });
 
 const page = usePageQuery();

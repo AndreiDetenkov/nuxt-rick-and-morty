@@ -3,18 +3,10 @@ import CharacterCard from '~/components/character-card.vue';
 import ColumnLayout from '~/components/layout/column-layout.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
 
-useSeoMeta({
+usePageSeo({
 	title: 'Rick and Morty Characters',
-	ogTitle: 'Rick and Morty Characters',
 	description:
 		'Explore all Rick and Morty characters from the multiverse. Browse through hundreds of characters with detailed information, images, and stats from the hit animated series.',
-	ogDescription:
-		'Explore all Rick and Morty characters from the multiverse. Browse through hundreds of characters with detailed information, images, and stats from the hit animated series.',
-	ogImage: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-	ogUrl: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-	author: 'Rick and Morty Fan Site',
-	robots: 'index, follow',
-	ogType: 'website',
 });
 
 const page = usePageQuery();

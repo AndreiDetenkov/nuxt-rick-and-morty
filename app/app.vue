@@ -1,6 +1,10 @@
 <script setup>
 import BaseFooter from './components/base/base-footer.vue';
 import BaseHeader from './components/base/base-header.vue';
+
+useSeoMeta({
+	ogSiteName: 'Rick and Morty',
+});
 </script>
 
 <template>

@@ -37,14 +37,11 @@ const seasonLabel = computed(() => {
 	return match ? `Season ${Number(match[1])} · Episode ${Number(match[2])}` : '';
 });
 
-useSeoMeta({
+usePageSeo({
 	title: () => `${episode.value?.name} (${episode.value?.episode}) | Rick and Morty`,
-	ogTitle: () => `${episode.value?.name} (${episode.value?.episode}) | Rick and Morty`,
 	description: () =>
 		`${episode.value?.name} — ${seasonLabel.value} of Rick and Morty, aired ${episode.value?.air_date}. See all ${characterIds.value.length} characters appearing in the episode.`,
-	ogDescription: () =>
-		`${episode.value?.name} — ${seasonLabel.value} of Rick and Morty, aired ${episode.value?.air_date}.`,
-	ogType: 'article',
+	type: 'article',
 });
 </script>
 

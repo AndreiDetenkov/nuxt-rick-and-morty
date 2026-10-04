@@ -44,14 +44,11 @@ const details = computed(() => {
 	].filter((item) => item.value);
 });
 
-useSeoMeta({
+usePageSeo({
 	title: () => `${location.value?.name} | Rick and Morty`,
-	ogTitle: () => `${location.value?.name} | Rick and Morty`,
 	description: () =>
 		`${location.value?.name} — ${location.value?.type} in ${location.value?.dimension}. See all ${residentIds.value.length} known residents of this Rick and Morty location.`,
-	ogDescription: () =>
-		`${location.value?.name} — ${location.value?.type} in ${location.value?.dimension}.`,
-	ogType: 'article',
+	type: 'article',
 });
 </script>
 

@@ -69,15 +69,12 @@ const {
 	refresh: refreshEpisodes,
 } = useLazyAsyncData(`character:${id}:episodes`, () => $api.episodes.getByIds(episodeIds.value));
 
-useSeoMeta({
+usePageSeo({
 	title: () => `${character.value?.name} | Rick and Morty`,
-	ogTitle: () => `${character.value?.name} | Rick and Morty`,
 	description: () =>
 		`${character.value?.name} — ${character.value?.status} ${character.value?.species} from ${character.value?.origin.name}. Appears in ${episodeIds.value.length} episodes of Rick and Morty.`,
-	ogDescription: () =>
-		`${character.value?.name} — ${character.value?.status} ${character.value?.species} from ${character.value?.origin.name}.`,
-	ogImage: () => character.value?.image,
-	ogType: 'profile',
+	image: () => character.value?.image,
+	type: 'profile',
 });
 </script>
 

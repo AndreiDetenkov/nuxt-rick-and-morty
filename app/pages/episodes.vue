@@ -3,17 +3,10 @@ import ColumnLayout from '~/components/layout/column-layout.vue';
 import GridLayout from '~/components/layout/grid-layout.vue';
 import EpisodeCard from '~/components/episode-card.vue';
 
-useSeoMeta({
+usePageSeo({
 	title: 'Rick and Morty Episodes',
-	ogTitle: 'Rick and Morty Episodes',
 	description:
 		'Browse through all episodes of Rick and Morty, including detailed information about each episode, air dates, and characters appearing in them.',
-	ogDescription:
-		'Browse through all episodes of Rick and Morty, including detailed information about each episode, air dates, and characters appearing in them.',
-	ogUrl: 'https://rickandmortyapi.com/api/episode',
-	author: 'Rick and Morty Fan Site',
-	robots: 'index, follow',
-	ogType: 'website',
 });
 
 const page = usePageQuery();
