@@ -24,7 +24,7 @@ describe('BaseNav.vue', () => {
 	it('renders navigation links correctly', () => {
 		const navLinks = wrapper.findAll('[data-test-id="nav_link"]');
 
-		expect(navLinks.length).toBe(2);
+		expect(navLinks.length).toBe(3);
 
 		expect(navLinks[0]).toBeDefined();
 		expect(navLinks[1]).toBeDefined();
@@ -34,5 +34,8 @@ describe('BaseNav.vue', () => {
 
 		expect(navLinks[1]!.text()).toBe('Episodes');
 		expect(navLinks[1]!.attributes('to')).toBe('/episodes');
+
+		expect(navLinks[2]!.text()).toBe('Locations');
+		expect(navLinks[2]!.attributes('to')).toBe('/locations');
 	});
 });

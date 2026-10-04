@@ -13,6 +13,10 @@ const navList: NavItem[] = [
 		name: 'Episodes',
 		path: '/episodes',
 	},
+	{
+		name: 'Locations',
+		path: '/locations',
+	},
 ];
 </script>
 

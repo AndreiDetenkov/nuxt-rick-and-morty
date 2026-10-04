@@ -80,6 +80,11 @@ export interface Episodes {
 	results: Episode[];
 }
 
+export interface Locations {
+	info: Info;
+	results: Location[];
+}
+
 export interface CharacterInfoListProp {
 	status: string;
 	species: string;

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { StatusEnum } from '#shared/types';
+import { StatusEnum, type CharacterLocation } from '#shared/types';
 import { getIdFromResourceUrl } from '#shared/utils/resource-url';
 import BaseBackLink from '~/components/base/base-back-link.vue';
 import EpisodeCard from '~/components/episode-card.vue';
@@ -34,6 +34,12 @@ const statusColor = computed(() => {
 	}
 });
 
+function toLocationRoute({ url }: CharacterLocation) {
+	return url
+		? { name: 'location-id' as const, params: { id: getIdFromResourceUrl(url) } }
+		: undefined;
+}
+
 const details = computed(() => {
 	if (!character.value) {
 		return [];
@@ -45,8 +51,13 @@ const details = computed(() => {
 		{ label: 'Species', value: species, icon: 'i-lucide-dna' },
 		{ label: 'Type', value: type, icon: 'i-lucide-tag' },
 		{ label: 'Gender', value: gender, icon: 'i-lucide-venus-and-mars' },
-		{ label: 'Origin', value: origin.name, icon: 'i-lucide-globe' },
-		{ label: 'Last known location', value: location.name, icon: 'i-lucide-map-pin' },
+		{ label: 'Origin', value: origin.name, icon: 'i-lucide-globe', to: toLocationRoute(origin) },
+		{
+			label: 'Last known location',
+			value: location.name,
+			icon: 'i-lucide-map-pin',
+			to: toLocationRoute(location),
+		},
 	].filter((item) => item.value);
 });
 
@@ -112,7 +123,16 @@ useSeoMeta({
 								<dt class="text-dimmed text-xs font-medium tracking-wide uppercase">
 									{{ item.label }}
 								</dt>
-								<dd class="text-default truncate" :title="item.value">{{ item.value }}</dd>
+								<dd class="text-default truncate" :title="item.value">
+									<ULink
+										v-if="item.to"
+										:to="item.to"
+										class="hover:text-secondary underline-offset-4 transition-colors hover:underline"
+									>
+										{{ item.value }}
+									</ULink>
+									<template v-else>{{ item.value }}</template>
+								</dd>
 							</div>
 						</div>
 					</dl>
