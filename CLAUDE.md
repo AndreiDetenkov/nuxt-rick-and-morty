@@ -60,4 +60,4 @@ The pre-commit hook runs `lint-staged` (prettier + eslint --fix) on `app/**/*.{t
 
 ## Conventions
 
-- Commits use Conventional Commits (`feat(scope):`, `refactor(ui):`, `chore(release):`). `CHANGELOG.md` is generated from them, so scopes and types matter.
+- Commits use Conventional Commits (`feat(scope):`, `refactor(ui):`, `chore(release):`). `CHANGELOG.md` is generated from them, so scopes and types matter. The `commit-msg` hook runs commitlint (`@commitlint/config-conventional`) and rejects messages without the colon after the scope, which changelogen would otherwise silently drop.

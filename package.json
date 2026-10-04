@@ -23,6 +23,8 @@
 		"tailwindcss": "^4.3.3"
 	},
 	"devDependencies": {
+		"@commitlint/cli": "^21.2.3",
+		"@commitlint/config-conventional": "^21.2.3",
 		"@iconify-json/lucide": "^1.2.115",
 		"@nuxt/eslint": "^1.16.0",
 		"@nuxt/test-utils": "4.3.3",
