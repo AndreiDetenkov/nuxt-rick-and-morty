@@ -30,10 +30,10 @@ describe('BaseNav.vue', () => {
 			.findComponent(UNavigationMenuStub)
 			.props('items');
 
-		expect(items.map(({ label, to }) => ({ label, to }))).toEqual([
-			{ label: 'Characters', to: '/characters' },
-			{ label: 'Episodes', to: '/episodes' },
-			{ label: 'Locations', to: '/locations' },
+		expect(items.map(({ label, to, icon }) => ({ label, to, icon }))).toEqual([
+			{ label: 'Characters', to: '/characters', icon: 'i-lucide-users' },
+			{ label: 'Episodes', to: '/episodes', icon: 'i-lucide-clapperboard' },
+			{ label: 'Locations', to: '/locations', icon: 'i-lucide-orbit' },
 		]);
 	});
 
