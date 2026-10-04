@@ -32,7 +32,10 @@ const navItems: NavigationMenuItem[] = [
 		color="secondary"
 		:class="{ '-mx-2.5': orientation === 'vertical' }"
 		:ui="{
-			link: 'text-primary dark:text-primary-light hover:text-secondary dark:hover:text-secondary aria-[current=page]:text-secondary dark:aria-[current=page]:text-secondary text-base font-semibold transition-colors duration-300',
+			link: [
+				'text-primary mb-2 sm:mb-0 dark:text-primary-light hover:text-secondary dark:hover:text-secondary aria-[current=page]:text-secondary dark:aria-[current=page]:text-secondary text-base font-semibold transition-colors duration-300',
+				orientation === 'horizontal' && 'before:bg-transparent',
+			],
 			linkLeadingIcon: 'text-inherit group-hover:text-inherit',
 		}"
 	/>
