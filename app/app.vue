@@ -1,4 +1,5 @@
 <script setup>
+import BaseFooter from './components/base/base-footer.vue';
 import BaseHeader from './components/base/base-header.vue';
 </script>
 
@@ -9,6 +10,7 @@ import BaseHeader from './components/base/base-header.vue';
 			<main>
 				<NuxtPage />
 			</main>
+			<base-footer />
 		</div>
 	</UApp>
 </template>
