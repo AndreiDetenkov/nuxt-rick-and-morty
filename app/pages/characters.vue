@@ -17,7 +17,7 @@ useSeoMeta({
 	ogType: 'website',
 });
 
-const page = ref(1);
+const page = usePageQuery();
 const searchValue = ref('');
 
 const { $api } = useNuxtApp();

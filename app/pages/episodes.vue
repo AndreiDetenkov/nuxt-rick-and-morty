@@ -16,7 +16,7 @@ useSeoMeta({
 	ogType: 'website',
 });
 
-const page = ref(1);
+const page = usePageQuery();
 
 const { $api } = useNuxtApp();
 const { data } = await useAsyncData('episodes', () => $api.episodes.getByPage(page.value), {
