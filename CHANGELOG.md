@@ -1,5 +1,32 @@
 # Changelog
 
+## v1.3.0
+
+[compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v1.2.0...v1.3.0)
+
+### 🚀 Enhancements
+
+- **composables:** Add `usePageQuery` composable with tests ([766f650](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/766f650))
+- **components:** Add `BaseFooter` component with tests ([a7df2ce](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/a7df2ce))
+- **error-page:** Add error page component with tests ([a084bf9](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/a084bf9))
+- **composables:** Add  composable with tests ([8691416](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/8691416))
+
+### 🩹 Fixes
+
+- **ui:** Improve link styles in base navigation ([55d00bf](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/55d00bf))
+- **error-page:** Adjust styles for status code and message ([f70e770](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/f70e770))
+
+### 🏡 Chore
+
+- **release:** Add missing commits to v1.2.0 changelog ([24a9421](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/24a9421))
+- **git:** Add commitlint commit-msg hook ([5abd912](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/5abd912))
+- **commitlint:** Convert config to TypeScript ([2facf1b](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/2facf1b))
+- **git:** Run lint-staged on server and shared ([930ad41](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/930ad41))
+
+### ❤️ Contributors
+
+- Andrei.detenkov <a.detenkov@gmail.com>
+
 ## v1.2.0
 
 [compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v1.1.0...v1.2.0)
