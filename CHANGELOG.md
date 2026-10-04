@@ -1,6 +1,5 @@
 # Changelog
 
-
 ## v1.2.0
 
 [compare changes](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/compare/v1.1.0...v1.2.0)
@@ -8,6 +7,8 @@
 ### 🚀 Enhancements
 
 - **locations:** Add locations feature with components, pages, and tests ([5bf3cd3](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/5bf3cd3))
+- **docs:** Add nuxt-ui skills ([317c45e](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/317c45e))
+- **components:** Update menu nav component ([6886630](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/6886630))
 - **components:** Add icons to base navigation menu ([10fa488](https://github.com/AndreiDetenkov/nuxt-rick-and-morty/commit/10fa488))
 
 ### ❤️ Contributors
